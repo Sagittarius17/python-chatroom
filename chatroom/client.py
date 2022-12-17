@@ -28,7 +28,7 @@ def receive():
     while True:
         try:
             # Receive Message From Server
-            # If 'NICK' Send Nickname
+            # If 'User' Send Nickname
             message = client.recv(1024).decode('ascii')
             new = f"{userclr}[{date_now}] {username}{separator_token}{message}{Fore.RESET}"
             if message == 'getName':
