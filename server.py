@@ -30,7 +30,7 @@ def handle(client):
             client.close()
             username = usernames[index]
             usernames.remove(username)
-            broadcast('{} left the chat'.format(username).encode('ascii'))
+            broadcast('{} left the chat!'.format(username).encode('ascii'))
             break
 
 # Receiving / Listening Function     
@@ -49,7 +49,7 @@ def receive():
         # Print And Broadcast Nickname
         print("username is {}".format(username))
         broadcast('{} joined'.format(username).encode('ascii'))
-        client.send('Connected to server'.encode('ascii'))
+        client.send('You connected to the server.'.encode('ascii'))
         
         # Start Handling Thread For Client
         thread = threading.Thread(target=handle, args=(client,))
